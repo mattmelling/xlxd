@@ -1,0 +1,38 @@
+{
+  "nodes": {
+    "libftd2xx": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-xF7BgC/Xx2EGBGCn511mvvwCs9jEe5CVzC/ZvAdcZMo=",
+        "type": "tarball",
+        "url": "https://ftdichip.com/wp-content/uploads/2022/07/libftd2xx-x86_64-1.4.27.tgz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://ftdichip.com/wp-content/uploads/2022/07/libftd2xx-x86_64-1.4.27.tgz"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1676790509,
+        "narHash": "sha256-W9uWAWokgS8US8rJf79qBLS2M+ZgIscfoz+KsNE7VGQ=",
+        "path": "/nix/store/is6r1f26rhs76n9shr32pgzy36ndxnkg-source",
+        "rev": "a1291d0d020a200c7ce3c48e96090bfa4890a475",
+        "revCount": 455838,
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "libftd2xx": "libftd2xx",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
