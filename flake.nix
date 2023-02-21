@@ -65,7 +65,8 @@
               --replace "/xlxd/xlxd.blacklist" "/etc/xlxd/xlxd.blacklist" \
               --replace "/xlxd/xlxd.interlink" "/etc/xlxd/xlxd.interlink" \
               --replace "/xlxd/xlxd.terminal" "/etc/xlxd/xlxd.terminal" \
-              --replace "/var/log/xlxd.debug" "/var/lib/xlxd/xlxd.debug"
+              --replace "/var/log/xlxd.debug" "/var/lib/xlxd/xlxd.debug" \
+              --replace "#define YSF_AUTOLINK_ENABLE             0" "#define YSF_AUTOLINK_ENABLE 1"
         '';
       };
       xlxd-dashboard = pkgs: pkgs.stdenv.mkDerivation {
@@ -329,7 +330,7 @@
               virtualHosts."${cfg.virtualHost}" = {
                 root = "${pkgs.xlxd-dashboard}";
                 locations."/".tryFiles = "$uri /index.php$is_args$args";
-                locations."~ ^/index.php(/|$)".extraConfig = ''
+                locations."~ \.php(/|$)".extraConfig = ''
                   include ${config.services.nginx.package}/conf/fastcgi_params;
                   include ${pkgs.nginx}/conf/fastcgi.conf;
                   fastcgi_split_path_info ^(.+\.php)(.+)$;
