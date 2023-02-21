@@ -134,6 +134,7 @@
               ${pkgs.xlxd}/bin/xlxd ${cfg.callsign} ${cfg.bind} ${cfg.ambed}
             '';
             serviceConfig = {
+              Restart = "always";
               ExecStartPost = let
                 script = pkgs.writeScriptBin "xlxd-exec-start-post" ''
                   #!${pkgs.stdenv.shell}
@@ -251,6 +252,9 @@
               #!${pkgs.stdenv.shell}
               ${pkgs.ambed}/bin/ambed ${cfg.bind}
             '';
+            serviceConfig = {
+              Restart = "always";
+            };
           };
         };
       };
