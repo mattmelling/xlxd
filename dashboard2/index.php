@@ -218,6 +218,11 @@ if ($CallingHome['Active']) {
 
         </div>
     </div>
+	<?php if($PageOptions['CustomPostContent']): ?>
+	<div class="row">
+		<?php include($PageOptions['CustomPostContent']); ?>
+	</div>
+	<?php endif; ?>
 </div>
 
 <footer class="footer">

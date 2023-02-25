@@ -72,7 +72,7 @@
       xlxd-dashboard = pkgs: pkgs.stdenv.mkDerivation {
         name = "xlxd-dashboard";
         version = "0.1";
-        src = ./dashboard;
+        src = ./dashboard2;
         installPhase = ''
           mkdir -p $out
           cp -R ./* $out
